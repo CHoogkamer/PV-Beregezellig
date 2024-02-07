@@ -1,0 +1,84 @@
+@import "./grid-layout_variables";
+
+// START CONTAINERS
+
+.container,
+.container-fluid,
+.container *,
+.container-fluid * {
+  box-sizing: border-box;
+}
+
+.container,
+.container-fluid {
+  --gutter-x: #{$gutter};
+  --gutter-y: 0;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    --gutter-x: #{$gutter * 3};
+    --gutter-y: 0;
+  }
+
+  width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@each $breakpoint, $container-max-width in $container-max-widths {
+  .container-#{$breakpoint} {
+    @extend .container-fluid;
+  }
+
+  @include media-breakpoint-up($breakpoint, $breakpoints) {
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    // Extend each breakpoint which is smaller or equal to the current breakpoint
+    $extend-breakpoint: true;
+
+    @each $name, $width in $breakpoints {
+      @if ($extend-breakpoint) {
+        .container#{breakpoint-infix($name, $breakpoints)} {
+          @extend %responsive-container-#{$breakpoint};
+        }
+
+        // Once the current breakpoint is reached, stop extending
+        @if ($breakpoint == $name) {
+          $extend-breakpoint: false;
+        }
+      }
+    }
+  }
+}
+
+// END CONTAINERS
+
+// START ROW
+
+:root {
+  @each $name, $value in $breakpoints {
+    --breakpoint-#{$name}: #{$value};
+  }
+}
+
+.row {
+  @include make-row();
+
+  &.row--center {
+    justify-content: center
+  }
+
+  > * {
+    @include make-col-ready();
+  }
+}
+
+// END ROW
+
+// START COL
+@include make-grid-columns();
+
+// END COL
