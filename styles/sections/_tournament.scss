@@ -8,8 +8,8 @@ section.tournament {
   );
   z-index: 10;
   margin-top: -40px;
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 80px;
+  padding-bottom: 120px;
 
   &:before {
     content: "";
@@ -21,8 +21,7 @@ section.tournament {
     background-color: inherit;
     mask-image: url('jitter-top-section.svg');
     mask-repeat: repeat-x;
-    outline: 1px solid red;
-  }
+   }
 
   .title {
     &__pre {
