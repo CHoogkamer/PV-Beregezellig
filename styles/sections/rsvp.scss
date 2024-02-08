@@ -19,7 +19,7 @@ section.rsvp {
       top: -8px;
       height: 8px;
       background-color: inherit;
-      mask-image: url('wave-top-section-1.svg');
+      mask-image: url('/wave-top-section-1.svg');
       mask-repeat: repeat-x;
     }
 
@@ -31,7 +31,7 @@ section.rsvp {
       bottom: -8px;
       height: 8px;
       background-color: var(--color-blue-dark);
-      mask-image: url('wave-bottom-section-1.svg');
+      mask-image: url('/wave-bottom-section-1.svg');
       mask-repeat: repeat-x;
     }
   
