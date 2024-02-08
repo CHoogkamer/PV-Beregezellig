@@ -11,3 +11,7 @@
 @import "variables";
 @import "sections/sections";
 
+body {
+    font-family: var(--font-copy);
+    font-size: var(--font-size-md);
+}
