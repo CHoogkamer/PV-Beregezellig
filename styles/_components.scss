@@ -1,0 +1,17 @@
+.title {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    &__pre {
+        font-size: var(--font-size-lg);
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: var(--font-size-xl);
+        line-height: .8;
+    }
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 10px 15px;
+}

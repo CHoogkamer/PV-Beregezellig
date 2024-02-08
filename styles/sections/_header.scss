@@ -1,6 +1,7 @@
 header {
   padding-top: 20px;
   position: relative;
+  z-index: 10;
 
   .header-video__background {
     width: 100%;
@@ -12,12 +13,18 @@ header {
     mask-size: 100% 100%;
     mask-position: bottom;
 
+    @media screen and (max-width: 786px) {
+      mask-size: 180% 140%;
+    }
+
+
     video {
-      width: 110%;
-      height: 110%;
-      margin-left: -5%;
-      margin-top: -5%;
+      width: 150%;
+      height: 150%;
+      margin-left: -25%;
+      margin-top: -25%;
       filter: blur(15px) brightness(0.8);
+      object-fit: cover;
     }
   }
 
