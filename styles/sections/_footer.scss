@@ -1,0 +1,14 @@
+footer {
+    padding-top: 25px;
+    .footer__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            color: #535353;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+}
