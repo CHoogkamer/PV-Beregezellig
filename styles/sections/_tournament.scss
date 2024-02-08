@@ -1,0 +1,33 @@
+section.tournament {
+  position: relative;
+  background: var(--color-yellow);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-yellow),
+    var(--color-yellow-dark)
+  );
+  z-index: 10;
+  margin-top: -40px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -7px;
+    height: 7px;
+    background-color: inherit;
+    mask-image: url('jitter-top-section.svg');
+    mask-repeat: repeat-x;
+    outline: 1px solid red;
+  }
+
+  .title {
+    &__pre {
+      color: var(--color-pink);
+    }
+    margin-bottom: 20px;
+  }
+}
